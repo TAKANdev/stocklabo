@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1220"><title>StockLab | 投資シミュレーション</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#"><span class="brand-mark">S</span> StockLab</a><nav><a class="active" href="#dashboard">ダッシュボード</a><a href="#market">マーケット</a><a href="#analysis">AI分析</a></nav><span class="mode-pill">PAPER TRADING</span></header>
+<main class="shell" id="dashboard">
+  <section class="welcome"><div><p class="eyebrow">YOUR INVESTMENT LAB</p><h1>投資を、学びながら体験しよう。</h1><p class="muted">仮想資金で売買を体験し、企業の情報を読み解くシミュレーション。</p></div><button class="ghost" id="reset">資産をリセット</button></section>
+  <section class="stats">
+    <article class="card stat"><span>総資産</span><strong id="totalAssets">¥1,000,000</strong><small>現金 + 保有株評価額</small></article>
+    <article class="card stat"><span>評価損益</span><strong id="profitLoss">¥0</strong><small id="profitRate">開始時から 0.00%</small></article>
+    <article class="card stat"><span>購入可能額</span><strong id="cash">¥1,000,000</strong><small>仮想現金残高</small></article>
+    <article class="card stat"><span>保有銘柄数</span><strong id="holdingCount">0</strong><small>現在保有している銘柄</small></article>
+  </section>
+  <section class="grid">
+    <article class="card panel" id="market"><div class="section-head"><div><p class="eyebrow">MARKET WATCH</p><h2>注目銘柄</h2></div><span class="tag">サンプルデータ</span></div><div class="table-wrap"><table><thead><tr><th>銘柄</th><th>参考株価</th><th>前日比</th><th>操作</th></tr></thead><tbody id="stockRows"></tbody></table></div><p class="note">※表示価格は操作確認用の架空サンプルです。リアルタイムの市場価格ではありません。</p></article>
+    <article class="card panel"><div class="section-head"><div><p class="eyebrow">YOUR PORTFOLIO</p><h2>保有銘柄</h2></div></div><div id="holdings" class="holdings empty">まだ銘柄を保有していません。マーケットから購入できます。</div></article>
+  </section>
+  <section class="grid lower">
+    <article class="card panel" id="analysis"><p class="eyebrow">AI INSIGHT</p><h2>企業分析ラボ</h2><p class="muted">銘柄を選ぶと、投資判断で確認したい観点を整理します。これは学習用ガイドであり、AIによる最新情報の分析ではありません。</p><div class="analysis-controls"><select id="analysisStock" aria-label="分析する銘柄"></select><button class="primary" id="analyze">分析観点を表示</button></div><div id="analysisResult" class="insight">分析する銘柄を選択してください。</div></article>
+    <article class="card panel"><p class="eyebrow">ACTIVITY</p><h2>取引履歴</h2><div id="history" class="history empty">取引履歴はまだありません。</div></article>
+  </section>
+  <footer>StockLab · 学習用の株式投資シミュレーター · 実際の金融商品取引は行いません。</footer>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body></html>
